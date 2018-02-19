@@ -18,13 +18,13 @@ mkdir -p $REDIST_DIR
 cd $BUILD_DIR
 ${ROOT_DIR}/x264/configure --enable-shared --host=$TOOLSET
 make -j8
-cd $ROOT_DIR
 
-
-if [ $1 = msvc ]; then
+if [ "$1" = "msvc" ]; then
    . "${TOOLS_DIR}/make_def_and_lib_from_dll.sh"
    make_def_and_lib_from_dll libx264-155.dll libx264.lib
 fi
+
+cd $ROOT_DIR
 
 cp $BUILD_DIR/x264.pc     $REDIST_DIR
 
