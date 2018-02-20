@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -x
+set -x
 
 ROOT_DIR=$PWD
 TOOLS_DIR=$ROOT_DIR/../../dev_tools
@@ -16,7 +16,7 @@ mkdir -p $BUILD_DIR
 mkdir -p $REDIST_DIR
 
 cd $BUILD_DIR
-${ROOT_DIR}/x264/configure --enable-shared --host=$HOST_DEF
+${ROOT_DIR}/x264/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --sysroot=$CROSSBUILDTREE
 make -j8
 
 if [ "$COMPILER" = "msvc" ]; then
