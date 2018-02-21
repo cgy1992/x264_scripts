@@ -8,7 +8,12 @@ http://www.videolan.org/developers/x264.html
 https://github.com/amfdev/common_scripts
 
 ## Instructions:
+
+### prepare your environment
+https://github.com/amfdev/common_scripts/blob/master/README.md
+
 ### dependencies download
+
 #### common_scripts must be downloaded to the directory `common_scripts` on the same level:
 ```
 https://github.com/amfdev/common_scripts.git
