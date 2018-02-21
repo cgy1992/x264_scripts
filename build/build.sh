@@ -1,8 +1,8 @@
 #!/bin/bash
-set -x
+#set -x
 
 ROOT_DIR=$PWD
-TOOLS_DIR=$ROOT_DIR/../../dev_tools
+TOOLS_DIR=$ROOT_DIR/../../common_scripts
 
 . "${TOOLS_DIR}/toolset/$1"
 
