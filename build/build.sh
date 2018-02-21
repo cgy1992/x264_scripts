@@ -16,7 +16,7 @@ mkdir -p $BUILD_DIR
 mkdir -p $REDIST_DIR
 
 cd $BUILD_DIR
-${ROOT_DIR}/x264/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --sysroot=$CROSSBUILDTREE
+${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --sysroot=$CROSSBUILDTREE
 make -j8
 
 if [ "$COMPILER" = "msvc" ]; then
