@@ -16,7 +16,15 @@ mkdir -p $BUILD_DIR
 mkdir -p $REDIST_DIR
 
 cd $BUILD_DIR
-${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --sysroot=$CROSSBUILDTREE
+
+if [ "$COMPILER" == "msvc" ]
+then
+	export CC='cl.exe'
+	${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --sysroot=$CROSSBUILDTREE
+else
+	${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --sysroot=$CROSSBUILDTREE
+fi
+
 make -j8
 
 if [ "$COMPILER" = "msvc" ]; then
