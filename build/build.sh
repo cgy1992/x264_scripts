@@ -6,7 +6,7 @@ TOOLS_DIR=$ROOT_DIR/../../dev_tools
 
 . "${TOOLS_DIR}/toolset/$1"
 
-BUILD_DIR=$ROOT_DIR/build-$1
+BUILD_DIR=$ROOT_DIR/_build-$1
 REDIST_DIR=$ROOT_DIR/../../x264/$1
 SOURCE_DIR=$ROOT_DIR/../x264
 
