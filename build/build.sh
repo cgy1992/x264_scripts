@@ -20,7 +20,9 @@ cd $BUILD_DIR
 if [ "$COMPILER" == "msvc" ]
 then
 	export CC='cl.exe'
-	${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --sysroot=$CROSSBUILDTREE --extra-cflags="-Zi"
+	# this option can be used in single thread compilation (make withot -jX option)
+	# --extra-cflags="-Zi"
+	${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX
 else
 	${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --sysroot=$CROSSBUILDTREE --extra-ldflags=-static-libgcc
 fi
