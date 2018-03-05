@@ -41,6 +41,7 @@ cp -v $BUILD_DIR/x264.pc     $REDIST_DIR
 cp -v $SOURCE_DIR/x264.h          $REDIST_DIR
 cp -v $BUILD_DIR/x264_config.h    $REDIST_DIR
 cp -v $BUILD_DIR/*.dll            $REDIST_DIR
+cp -v $BUILD_DIR/*.exe            $REDIST_DIR
 
 if [ "$COMPILER" == "msvc" ]
 then
