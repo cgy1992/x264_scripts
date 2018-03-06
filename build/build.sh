@@ -7,7 +7,7 @@ TOOLS_DIR=$ROOT_DIR/../../common_scripts
 . "${TOOLS_DIR}/toolset/$1"
 
 BUILD_DIR=$ROOT_DIR/_build-$1
-REDIST_DIR=$ROOT_DIR/../../x264/redist/$1
+REDIST_DIR=$ROOT_DIR/../../x264_redist/$1
 SOURCE_DIR=$ROOT_DIR/../../x264
 
 rm -fR $BUILD_DIR
@@ -41,7 +41,7 @@ cp -v $BUILD_DIR/x264.pc     $REDIST_DIR
 cp -v $SOURCE_DIR/x264.h          $REDIST_DIR
 cp -v $BUILD_DIR/x264_config.h    $REDIST_DIR
 cp -v $BUILD_DIR/*.dll            $REDIST_DIR
-cp -v $BUILD_DIR/*.exe            $REDIST_DIR
+#cp -v $BUILD_DIR/*.exe            $REDIST_DIR
 
 if [ "$COMPILER" == "msvc" ]
 then
