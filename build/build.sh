@@ -31,7 +31,7 @@ else
 	${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --extra-ldflags=-static-libgcc --prefix="./../../../x264_redist/$1"
 fi
 
-make -j8
+make -j${NPROC}
 
 if [ "$COMPILER" == "msvc" ]; then
    . "${TOOLS_DIR}/make_def_and_lib_from_dll.sh"
