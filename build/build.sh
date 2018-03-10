@@ -25,9 +25,10 @@ then
 	export CC='cl.exe'
 	# this option can be used in single thread compilation (make withot -jX option)
 	# --extra-cflags="-Zi"
+    # --sysroot=$CROSSBUILDTREE 
 	${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --prefix="./../../../x264_redist/$1"
 else
-	${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --sysroot=$CROSSBUILDTREE --extra-ldflags=-static-libgcc --prefix="./../../../x264_redist/$1"
+	${SOURCE_DIR}/configure --enable-shared --host=$HOST_DEF --cross-prefix=$CROSS_PREFIX --extra-ldflags=-static-libgcc --prefix="./../../../x264_redist/$1"
 fi
 
 make -j8
